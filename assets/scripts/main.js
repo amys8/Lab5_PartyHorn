@@ -24,29 +24,40 @@ volnum.addEventListener("input", updateSlider);
 function updateSlider() {
   volslid.value = volnum.value;
   document.getElementById("horn-sound").volume = volnum.value/100;
+  if (volnum.value >= 67) {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-3.svg";
+  }
+  else if (volnum.value >= 33) {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-2.svg";
+  }
+  else if (volnum.value >= 1) {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-1.svg";
+  }
+  else {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-0.svg";
+  }
 }
 volslid.addEventListener("change", updateNumber);
 function updateNumber() {
   volnum.value = volslid.value;
   document.getElementById("horn-sound").volume = volslid.value/100;
+  if (volnum.value >= 67) {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-3.svg";
+  }
+  else if (volnum.value >= 33) {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-2.svg";
+  }
+  else if (volnum.value >= 1) {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-1.svg";
+  }
+  else {
+    document.getElementById("volume-image").src = "./assets/media/icons/volume-level-0.svg";
+  }
 }
 
-// volume icon
-if (document.getElementById("volume-number").value >= 67) {
-  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-3.svg";
-}
-else if (document.getElementById("volume-number").value >= 33) {
-  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-2.svg";
-}
-else if (document.getElementById("volume-number").value >= 1) {
-  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-1.svg";
-}
-else {
-  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-0.svg";
-}
 
 // honk button
-var honk = document.getElementById("honk-btn");
+/*var honk = document.getElementById("honk-btn");
 if (document.getElementById("volume-number").value == 0) {
   honk.disabled = true;
 }
@@ -57,5 +68,5 @@ honk.addEventListener("click", playHonk);
 function playHonk(e) {
   e.preventDefault();
   honk.play();
-}
+}*/
   
