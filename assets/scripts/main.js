@@ -32,13 +32,13 @@ function updateNumber() {
 }
 
 // volume icon
-if (getElementById("volume-number").value >= 67) {
+if (document.getElementById("volume-number").value >= 67) {
   document.getElementById("volume-image").src = "./assets/media/icons/volume-level-3.svg";
 }
-else if (getElementById("volume-number").value >= 33) {
+else if (document.getElementById("volume-number").value >= 33) {
   document.getElementById("volume-image").src = "./assets/media/icons/volume-level-2.svg";
 }
-else if (getElementById("volume-number").value >= 1) {
+else if (document.getElementById("volume-number").value >= 1) {
   document.getElementById("volume-image").src = "./assets/media/icons/volume-level-1.svg";
 }
 else {
@@ -47,7 +47,7 @@ else {
 
 // honk button
 var honk = document.getElementById("honk-btn");
-if (getElementById("volume-number").value == 0) {
+if (document.getElementById("volume-number").value == 0) {
   honk.disabled = true;
 }
 else {
