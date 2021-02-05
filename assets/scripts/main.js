@@ -31,6 +31,20 @@ function updateNumber() {
   document.getElementById("horn-sound").volume = volslid.value/100;
 }
 
+// volume icon
+if (volnum.value >= 67) {
+  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-3.svg";
+}
+else if (volnum.value >= 33) {
+  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-2.svg";
+}
+else if (volnum.value >= 1) {
+  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-1.svg";
+}
+else {
+  document.getElementById("volume-image").src = "./assets/media/icons/volume-level-0.svg";
+}
+
 // honk button
 var honk = document.getElementById("honk-btn");
 if (volnum.value == 0) {
@@ -43,8 +57,4 @@ honk.addEventListener("click", playHonk);
 function playHonk() {
   honk.play();
 }
-
-// volume icon
-  
-  
   
