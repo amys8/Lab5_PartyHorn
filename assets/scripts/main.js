@@ -23,7 +23,7 @@ volnum.addEventListener("input", updateSlider);
 function updateSlider() {
   volslid.value = volnum.value;
 }
-volslid.addEventListener("input", updateNumber);
+volslid.addEventListener("change", updateNumber);
 function updateNumber() {
   volnum.value = volslid.value;
 }
