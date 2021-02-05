@@ -17,13 +17,34 @@ function partyHornPic() {
   document.getElementById("horn-sound").src = "./assets/media/audio/party-horn.mp3";
 }
 
+// volume control
 var volnum = document.getElementById("volume-number");
 var volslid = document.getElementById("volume-slider");
 volnum.addEventListener("input", updateSlider);
 function updateSlider() {
   volslid.value = volnum.value;
+  document.getElementById("horn-sound").volume = volnum.value/100;
 }
 volslid.addEventListener("change", updateNumber);
 function updateNumber() {
   volnum.value = volslid.value;
+  document.getElementById("horn-sound").volume = volslid.value/100;
 }
+
+// honk button
+var honk = document.getElementById("honk-btn");
+if (volnum.value == 0) {
+  honk.disabled = true;
+}
+else {
+  honk.disabled = false;
+}
+honk.addEventListener("click", playHonk);
+function playHonk() {
+  honk.play();
+}
+
+// volume icon
+  
+  
+  
