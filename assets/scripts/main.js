@@ -17,7 +17,7 @@ function partyHornPic() {
   document.getElementById("horn-sound").src = "./assets/media/audio/party-horn.mp3";
 }
 
-// volume control
+// volume control and icon
 var volnum = document.getElementById("volume-number");
 var volslid = document.getElementById("volume-slider");
 volnum.addEventListener("input", updateSlider);
@@ -26,15 +26,19 @@ function updateSlider() {
   document.getElementById("horn-sound").volume = volnum.value/100;
   if (volnum.value >= 67) {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-3.svg";
+    document.getElementById("honk-btn").disabled = false;
   }
   else if (volnum.value >= 33) {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-2.svg";
+    document.getElementById("honk-btn").disabled = false;
   }
   else if (volnum.value >= 1) {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-1.svg";
+    document.getElementById("honk-btn").disabled = false;
   }
   else {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-0.svg";
+    document.getElementById("honk-btn").disabled = true;
   }
 }
 volslid.addEventListener("change", updateNumber);
@@ -43,30 +47,27 @@ function updateNumber() {
   document.getElementById("horn-sound").volume = volslid.value/100;
   if (volnum.value >= 67) {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-3.svg";
+    document.getElementById("honk-btn").disabled = false;
   }
   else if (volnum.value >= 33) {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-2.svg";
+    document.getElementById("honk-btn").disabled = false;
   }
   else if (volnum.value >= 1) {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-1.svg";
+    document.getElementById("honk-btn").disabled = false;
   }
   else {
     document.getElementById("volume-image").src = "./assets/media/icons/volume-level-0.svg";
+    document.getElementById("honk-btn").disabled = true;
   }
 }
 
-
 // honk button
-/*var honk = document.getElementById("honk-btn");
-if (document.getElementById("volume-number").value == 0) {
-  honk.disabled = true;
-}
-else {
-  honk.disabled = false;
-}
+var honk = document.getElementById("honk-btn");
 honk.addEventListener("click", playHonk);
 function playHonk(e) {
   e.preventDefault();
-  honk.play();
-}*/
+  document.getElementById("horn-sound").play();
+}
   
