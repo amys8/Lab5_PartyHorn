@@ -17,3 +17,13 @@ function partyHornPic() {
   document.getElementById("horn-sound").src = "./assets/media/audio/party-horn.mp3";
 }
 
+var volnum = document.getElementById("volume-number");
+var volslid = document.getElementById("volume-slider");
+volnum.addEventListener("input", updateSlider);
+function updateSlider() {
+  volslid.value = volnum.value;
+}
+volslid.addEventListener("input", updateNumber);
+function updateNumber() {
+  volnum.value = volslid.value;
+}
