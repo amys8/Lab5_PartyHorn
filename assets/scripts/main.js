@@ -1,3 +1,3 @@
 // main.js
 
-// TODO
+var hornsound = document.getElementbyId("horn-sound").addEventListener
