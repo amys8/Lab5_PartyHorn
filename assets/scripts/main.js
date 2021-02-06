@@ -17,7 +17,7 @@ function partyHornPic() {
   document.getElementById("horn-sound").src = "./assets/media/audio/party-horn.mp3";
 }
 
-// volume control and icon
+// volume control and icon, enable or disable honk button
 var volnum = document.getElementById("volume-number");
 var volslid = document.getElementById("volume-slider");
 volnum.addEventListener("input", updateSlider);
@@ -41,7 +41,7 @@ function updateSlider() {
     document.getElementById("honk-btn").disabled = true;
   }
 }
-volslid.addEventListener("change", updateNumber);
+volslid.addEventListener("input", updateNumber);
 function updateNumber() {
   volnum.value = volslid.value;
   document.getElementById("horn-sound").volume = volslid.value/100;
@@ -63,7 +63,7 @@ function updateNumber() {
   }
 }
 
-// honk button
+// playing honk button
 var honk = document.getElementById("honk-btn");
 honk.addEventListener("click", playHonk);
 function playHonk(e) {
