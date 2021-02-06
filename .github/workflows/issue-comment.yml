@@ -13,4 +13,4 @@ jobs:
         id: GifComment
         with:
           GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
-          comment_type: 'gif' 
+          comment_type: 'gif'  
