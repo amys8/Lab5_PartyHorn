@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add gif comment
+        uses: amys8/Lab5_PartyHorn@main
         id: GifComment
         with:
           GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
