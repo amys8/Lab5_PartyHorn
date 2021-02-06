@@ -1,0 +1,15 @@
+name: Gif Comment
+on:
+  issues:
+    types: [opened]
+  
+jobs:
+  comment:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add gif comment
+        id: GifComment
+        with:
+          GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
+          comment_type: 'gif'
